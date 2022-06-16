@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* primary */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+
+    /* Accent */
+    --blue: hsl(248, 32%, 51%);
+
+    /* Neutral */
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+body {
+    background-image: url(bg-intro-desktop.png);
+    background-color: var(--red);
+    font-family: 'Poppins';
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 'first-section second-section';
+    align-items: center;
+    margin: 0 10rem;
+    max-width: 1200px;
+}
+
+input {
+    height: 40px;
+    padding: 7px 20px;
+}
+
+input[type=text]
+input[type=email]
+input[type=button]
+input[type=password] {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input[type=button] {
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 00.5px;
+    box-shadow: 0px 3px 0px 0px rgba(56, 204, 240, 0.39);
+}
+
+
+.footer {
+    font-size: 60%;
+    color: var(--grayish-blue);
+}
+
+.form-footer {
+    color: var(--red);
+}
+
+.first-section {
+    grid-area: first-section;
+    color: white;
+    margin-right: 2rem;
+}
+
+.first-section h1 {
+    font-size: 42px;
+}
+
+.first-section p {
+    font-size: 80%;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    padding-top: 1.3rem;
+}
+
+
+
+.second-section {
+    grid-area: second-section;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.16);
+}
+
+.formhead {
+   background-color: var(--blue);
+   color: white;
+   font-size: 75%;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.16);
+   margin-bottom: 2rem;
+}
+
+
+@media (max-width:1024px){
+    main{
+        margin: 0 3rem;
+    }
+    .first-section h1 {font-size: 36px;}
+}
+
+@media (max-width:800px) {
+    main {
+        grid-template-areas: 'first-section' 'second-section';
+        background-image: url(bg-intro-mobile.png);
+        text-align: center;
+        margin: 0 1.5rem;
+    }
+
+    .first-section {
+        padding-top: 6rem;
+        margin: unset;
+    }
+    
+    .first-section h1 { font-size: 28px; }
+    .first-section p { padding-bottom: 3rem; }
+    
+    form {margin-bottom: 3rem; }
+}
